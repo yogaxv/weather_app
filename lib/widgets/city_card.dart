@@ -11,10 +11,12 @@ class CityCard extends StatelessWidget {
     return Card(
       borderOnForeground: true,
       elevation: 0,
-      color: active ? ColorConstant.primaryBackground : null,
+      color: active
+          ? ColorConstant.primaryBackground
+          : ColorConstant.SecondaryBackground,
       shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(15.0),
-          side: BorderSide(color: ColorConstant.primaryText)),
+        borderRadius: BorderRadius.circular(15.0),
+      ),
       child: Container(
         padding: EdgeInsets.all(25.0),
         child: Column(
