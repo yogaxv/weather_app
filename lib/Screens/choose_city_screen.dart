@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:weather_app/Constant/color_constant.dart';
+import 'package:weather_app/Screens/location_detail_screen.dart';
 import 'package:weather_app/widgets/city_card.dart';
 import 'package:weather_app/widgets/custom_button.dart';
 
@@ -92,9 +93,19 @@ class _ChooseCityScreenState extends State<ChooseCityScreen> {
                   return index == 0
                       ? CityCard(
                           active: true,
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(context,
+                                MaterialPageRoute(builder: (context) {
+                              return LocationDetailScreen();
+                            }));
+                          },
                         )
-                      : CityCard(onPressed: () {});
+                      : CityCard(onPressed: () {
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) {
+                            return LocationDetailScreen();
+                          }));
+                        });
                 }),
               ),
             )
