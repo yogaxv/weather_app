@@ -89,7 +89,12 @@ class _ChooseCityScreenState extends State<ChooseCityScreen> {
                 crossAxisSpacing: 15,
                 // Generate 100 widgets that display their index in the List.
                 children: List.generate(4, (index) {
-                  return index == 0 ? CityCard(active: true) : CityCard();
+                  return index == 0
+                      ? CityCard(
+                          active: true,
+                          onPressed: () {},
+                        )
+                      : CityCard(onPressed: () {});
                 }),
               ),
             )

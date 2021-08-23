@@ -2,18 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:weather_app/Constant/color_constant.dart';
 
 class CityCard extends StatelessWidget {
-  const CityCard({Key? key, this.active = false}) : super(key: key);
+  const CityCard({Key? key, this.active = false, required this.onPressed})
+      : super(key: key);
 
+  final GestureTapCallback onPressed;
   final bool active;
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      borderOnForeground: true,
-      elevation: 0,
-      color: active
+    return RawMaterialButton(
+      onPressed: onPressed,
+      splashColor: ColorConstant.primaryText.withOpacity(0.2),
+      fillColor: active
           ? ColorConstant.primaryBackground
           : ColorConstant.SecondaryBackground,
+      elevation: 0,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(15.0),
       ),
