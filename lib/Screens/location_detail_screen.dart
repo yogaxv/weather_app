@@ -1,3 +1,4 @@
+import 'package:date_picker_timeline/date_picker_timeline.dart';
 import 'package:flutter/material.dart';
 import 'package:weather_app/Constant/color_constant.dart';
 import 'package:weather_app/widgets/location_detail_card.dart';
@@ -39,7 +40,24 @@ class _LocationDetailScreenState extends State<LocationDetailScreen> {
               Padding(
                 padding: EdgeInsets.only(right: 25, left: 25),
                 child: LocationDetailCard(),
-              )
+              ),
+              SizedBox(height: 50),
+              DatePicker(
+                DateTime.now(),
+                initialSelectedDate: DateTime.now(),
+                selectionColor: ColorConstant.primaryText,
+                selectedTextColor: ColorConstant.primaryBackground,
+                // dateTextStyle: TextStyle(fontSize: 20),
+                // dayTextStyle: TextStyle(fontSize: 10),
+                // monthTextStyle: TextStyle(fontSize: 8),
+                height: 90,
+                onDateChange: (date) {
+                  // New date selected
+                  setState(() {
+                    // _selectedValue = date;
+                  });
+                },
+              ),
             ],
           )),
     );
