@@ -23,6 +23,12 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_bloc: ^7.1.0
+  equatable: ^2.0.3
+  hydrated_bloc: ^7.0.1
+  path_provider: ^2.0.2
+  dio: ^4.0.0
+  dartz: ^0.10.0
   date_picker_timeline: ^1.2.3
   fl_chart: ^0.36.4
 

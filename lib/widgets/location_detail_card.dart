@@ -49,7 +49,7 @@ class LocationDetailCard extends StatelessWidget {
                 )
               ],
             ),
-            SizedBox(height: 35),
+            SizedBox(height: 80),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.end,

@@ -41,22 +41,26 @@ class _LocationDetailScreenState extends State<LocationDetailScreen> {
                 padding: EdgeInsets.only(right: 25, left: 25),
                 child: LocationDetailCard(),
               ),
-              SizedBox(height: 50),
-              DatePicker(
-                DateTime.now(),
-                initialSelectedDate: DateTime.now(),
-                selectionColor: ColorConstant.primaryText,
-                selectedTextColor: ColorConstant.primaryBackground,
-                // dateTextStyle: TextStyle(fontSize: 20),
-                // dayTextStyle: TextStyle(fontSize: 10),
-                // monthTextStyle: TextStyle(fontSize: 8),
-                height: 90,
-                onDateChange: (date) {
-                  // New date selected
-                  setState(() {
-                    // _selectedValue = date;
-                  });
-                },
+              SizedBox(height: 10),
+              Container(
+                color: Colors.white,
+                padding: EdgeInsets.all(8.0),
+                child: DatePicker(
+                  DateTime.now(),
+                  initialSelectedDate: DateTime.now(),
+                  selectionColor: ColorConstant.primaryText,
+                  selectedTextColor: ColorConstant.primaryBackground,
+                  // dateTextStyle: TextStyle(fontSize: 20),
+                  // dayTextStyle: TextStyle(fontSize: 10),
+                  // monthTextStyle: TextStyle(fontSize: 8),
+                  height: 90,
+                  onDateChange: (date) {
+                    // New date selected
+                    setState(() {
+                      // _selectedValue = date;
+                    });
+                  },
+                ),
               ),
             ],
           )),

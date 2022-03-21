@@ -1,12 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:weather_app/Constant/color_constant.dart';
+import 'package:weather_app/models/cities_model.dart';
 
 class CityCard extends StatelessWidget {
-  const CityCard({Key? key, this.active = false, required this.onPressed})
+  const CityCard(
+      {Key? key,
+      this.active = false,
+      required this.onPressed,
+      required this.city})
       : super(key: key);
 
   final GestureTapCallback onPressed;
   final bool active;
+  final ListElement city;
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +35,7 @@ class CityCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  "Bogor",
+                  city.name,
                   style: TextStyle(
                     color: ColorConstant.primaryText,
                     fontSize: 12.0,
@@ -47,7 +53,7 @@ class CityCard extends StatelessWidget {
             ),
             SizedBox(height: 15),
             Text(
-              "28\u2103",
+              "${city.main.temp.toInt().toString()}\u2103",
               style: TextStyle(
                 color: ColorConstant.primaryText,
                 fontSize: 25.0,
